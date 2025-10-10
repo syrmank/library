@@ -1,14 +1,10 @@
-print("Library system started")
+books = []
 
-
-def add_book(title: str, author: str) -> None:
-    """
-    Добавляет книгу в библиотеку.
-
-    :param title: Название книги
-    :param author: Автор книги
-    """
-    print(f"Adding book {title} by {author}")
-
-
-add_book("1986", "Orwell")
+def add_book(title: str, author: str) -> str:
+    if not title or not author:
+        return "Ошибка: некорректные данные"
+    for book in books:
+        if book == title:
+            return f"Ошибка: книга уже существует"
+    books.append(title)
+    return f"Книга '{title}' добавлена"
