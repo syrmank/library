@@ -1,5 +1,7 @@
+from library_app.database import SessionLocal, engine, Base
 from .book import Book
 
+Base.metadata.create_all(bind=engine)
 class Library:
     def __init__(self):
         self.books = []
